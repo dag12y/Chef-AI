@@ -227,7 +227,10 @@ ul.ingredients-list {
         box-shadow: none;
     }
     .main-content {
-        padding: 18px 4vw 10px;
+        padding: 18px 2vw 10px;
+    }
+    .add-ingredient-form{
+        padding: 5px;
     }
     .chef-header {
         border-radius: 0 0 18px 18px;
@@ -238,6 +241,16 @@ ul.ingredients-list {
         width: auto;
         font-size: 0.95rem;
         padding: 10px 10px;
+        
+    }
+    .add-ingredient-form{
+        
+        height: 50px;
+        
+    }
+    .add-ingredient-form button{
+        padding: 5px;
+        width: 160px;
     }
     .chef-logo {
         width: 45px;
