@@ -244,13 +244,14 @@ ul.ingredients-list {
         
     }
     .add-ingredient-form{
+        padding: 5px;
+        height: 60px;
         
-        height: 50px;
         
     }
     .add-ingredient-form button{
-        padding: 5px;
-        width: 160px;
+        padding: 3px;
+        width: 110px;
     }
     .chef-logo {
         width: 45px;
