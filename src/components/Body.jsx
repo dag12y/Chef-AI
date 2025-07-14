@@ -7,10 +7,19 @@ function Body(){
     const [ingredients,setIngredients]=React.useState([]);
     const [recipe, setRecipe] = React.useState('')
     const [loading, setLoading] = React.useState(false)
+    const recipeSectionRef = React.useRef(null)
 
     function handleDelete(index){
         setIngredients(prevIngredients=>prevIngredients.filter((_,i)=>i!=index))
     }
+
+    React.useEffect(() => {
+        if (recipe !== "" && recipeSectionRef.current !== null) {
+            recipeSectionRef.current.scrollIntoView({behavior:'smooth'})
+        }
+    }, [recipe])
+
+
     async function getRecipe() {
         setLoading(true)
         const recipeMarkdown = await getRecipeFromMistral(ingredients)
@@ -31,8 +40,8 @@ function Body(){
                     <button>Add ingredient</button>
                 </form>
             </section>
-            {ingredients.length ? <section className="ingredients-list-section"><IngredientsList ingredients={ingredients} handleDelete={handleDelete} getRecipe={getRecipe}/></section> : null}
-            {(loading || recipe) && <section className="recipe-section"><ClaudeRecipe recipe={recipe} loading={loading}/></section>}
+            {ingredients.length ? <section className="ingredients-list-section"><IngredientsList ingredients={ingredients} handleDelete={handleDelete} getRecipe={getRecipe} ref={recipeSectionRef}/></section> : null}
+            {(loading || recipe) && <section className="recipe-section" ><ClaudeRecipe recipe={recipe} loading={loading}/></section>}
         </main>
     )
 }
