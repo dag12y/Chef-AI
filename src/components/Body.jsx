@@ -36,7 +36,7 @@ function Body(){
         <main className="main-content">
             <section className="ingredient-input-section">
                 <form className="add-ingredient-form" action={addIngredient}>
-                    <input type="text" aria-label="Add ingredient" placeholder="e.g. doro wet" name="ingredient"/>
+                    <input type="text" aria-label="Add ingredient" placeholder="e.g. boiled egg" name="ingredient" autoComplete="off"/>
                     <button>Add ingredient</button>
                 </form>
             </section>
